@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Praveen0698/invoice-deploy/static/css/main.96f2e3c0.css",
+    "main.js": "/Praveen0698/invoice-deploy/static/js/main.3932d4d5.js",
+    "index.html": "/Praveen0698/invoice-deploy/index.html",
+    "main.96f2e3c0.css.map": "/Praveen0698/invoice-deploy/static/css/main.96f2e3c0.css.map",
+    "main.3932d4d5.js.map": "/Praveen0698/invoice-deploy/static/js/main.3932d4d5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.96f2e3c0.css",
+    "static/js/main.3932d4d5.js"
+  ]
+}
