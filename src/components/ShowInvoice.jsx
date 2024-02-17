@@ -9,8 +9,6 @@ import Footer from "./Footer";
 import TableForm from "./TableForm";
 import TaxTableForm from "./TaxTableForm";
 import TaxTable from "./TaxTable";
-// import TaxTable from "./TaxTable";
-// import TaxTableForm from "./TaxTableForm";
 
 const ShowInvoice = () => {
   const [showInvoice, setShowInvoice] = useState(false);
@@ -95,6 +93,7 @@ const ShowInvoice = () => {
                     <tbody>
                       <tr className="">
                         <td className="inst">
+                          <h2 className="font-bold">{clientName}</h2>
                           <h5>{companyName}</h5>
                           <p>{addressBillTo}</p> <p>GSTIN : {gstIn}</p>{" "}
                           <p>State: {state}</p>
@@ -103,7 +102,6 @@ const ShowInvoice = () => {
                           <p>{shipAddress}</p>
                         </td>
                         <td className="wa-pl">
-                          <p>Place of supply: {placeSupply}</p>
                           <p> Invoice No. : {invoiceNumber}</p>
                           <p>Date : {invoiceDate} </p>
                           <p> TIme : {invoiceTime} </p>
@@ -212,114 +210,6 @@ const ShowInvoice = () => {
         <div className="flex flex-col justify-center">
           <div className="form-input">
             <div>
-              <label htmlFor="name">Enter your name</label>
-              <input
-                type="text"
-                name="name"
-                id="name"
-                placeholder="Enter your name"
-                autoComplete="off"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-              />
-            </div>
-
-            <div>
-              <label htmlFor="address">Enter your address</label>
-              <input
-                type="text"
-                name="address"
-                id="address"
-                placeholder="Enter your address"
-                autoComplete="off"
-                value={address}
-                onChange={(e) => setAddress(e.target.value)}
-              />
-            </div>
-
-            <div>
-              <label htmlFor="email">Enter your email</label>
-              <input
-                type="email"
-                name="email"
-                id="email"
-                placeholder="Enter your email"
-                autoComplete="off"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </div>
-
-            <div>
-              <label htmlFor="phone">Enter your phone number</label>
-              <input
-                type="text"
-                name="phone"
-                id="phone"
-                placeholder="Enter your phone number"
-                autoComplete="off"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-              />
-            </div>
-
-            <div>
-              <label htmlFor="bankName">Enter your bank name</label>
-              <input
-                type="text"
-                name="bankName"
-                id="bankName"
-                placeholder="Enter your bank name"
-                autoComplete="off"
-                value={bankName}
-                onChange={(e) => setBankName(e.target.value)}
-              />
-            </div>
-
-            <div>
-              <label htmlFor="bankHolderName">
-                Enter your bank account holder name
-              </label>
-              <input
-                type="text"
-                name="bankHolderName"
-                id="bankHolderName"
-                placeholder="Enter your bank account holder name"
-                autoComplete="off"
-                value={bankHolderName}
-                onChange={(e) => setBankHolderName(e.target.value)}
-              />
-            </div>
-
-            <div>
-              <label htmlFor="bankAccNumber">
-                Enter your bank account number
-              </label>
-              <input
-                type="text"
-                name="bankAccNumber"
-                id="bankAccNumber"
-                placeholder="Enter your bank account number"
-                autoComplete="off"
-                value={bankAccNumber}
-                onChange={(e) => setBankAccNumber(e.target.value)}
-              />
-            </div>
-
-            <div>
-              <label htmlFor="website">Enter your website URL (optional)</label>
-              <input
-                type="text"
-                name="website"
-                id="website"
-                placeholder="Enter your website URL (optional)"
-                autoComplete="off"
-                value={website}
-                onChange={(e) => setWebsite(e.target.value)}
-              />
-            </div>
-
-            <div>
               <label htmlFor="clientName">Enter your client name</label>
               <input
                 type="text"
@@ -329,19 +219,6 @@ const ShowInvoice = () => {
                 autoComplete="off"
                 value={clientName}
                 onChange={(e) => setClientName(e.target.value)}
-              />
-            </div>
-
-            <div>
-              <label htmlFor="clientAddress">Enter your client address</label>
-              <input
-                type="text"
-                name="clientAddress"
-                id="clientAddress"
-                placeholder="Enter your client address"
-                autoComplete="off"
-                value={clientAddress}
-                onChange={(e) => setClientAddress(e.target.value)}
               />
             </div>
 
@@ -424,19 +301,6 @@ const ShowInvoice = () => {
             </div>
 
             <div>
-              <label htmlFor="placeSupply">Enter Place Supply</label>
-              <input
-                type="text"
-                name="placeSupply"
-                id="placeSupply"
-                placeholder="Enter Place Supply"
-                autoComplete="off"
-                value={placeSupply}
-                onChange={(e) => setPlaceSupply(e.target.value)}
-              />
-            </div>
-
-            <div>
               <label htmlFor="addressBillTo">Enter Address Bill To</label>
               <input
                 type="text"
@@ -449,6 +313,18 @@ const ShowInvoice = () => {
               />
             </div>
 
+            <div>
+              <label htmlFor="bankName">Enter your bank name</label>
+              <input
+                type="text"
+                name="bankName"
+                id="bankName"
+                placeholder="Enter your bank name"
+                autoComplete="off"
+                value={bankName}
+                onChange={(e) => setBankName(e.target.value)}
+              />
+            </div>
             <div>
               <label htmlFor="bankAccountNo">Enter Bank Account No</label>
               <input
@@ -500,33 +376,18 @@ const ShowInvoice = () => {
                 onChange={(e) => setCompanyName(e.target.value)}
               />
             </div>
-
             <div>
-              <label htmlFor="notes">Enter your note</label>
+              <label htmlFor="gst">Enter GST Charge</label>
               <input
                 type="text"
-                name="notes"
-                id="notes"
-                placeholder="Enter a note"
+                name="gst"
+                id="gst"
+                placeholder="Enter GST %"
                 autoComplete="off"
-                value={notes}
-                onChange={(e) => setNotes(e.target.value)}
+                value={gst}
+                onChange={(e) => setGst(e.target.value)}
               />
             </div>
-          </div>
-          <div style={{ margin: "10px 0" }}>
-            <label htmlFor="gst" style={{ margin: "0 10px" }}>
-              Enter GST Charge
-            </label>
-            <input
-              type="text"
-              name="gst"
-              id="gst"
-              placeholder="Enter GST %"
-              autoComplete="off"
-              value={gst}
-              onChange={(e) => setGst(e.target.value)}
-            />
           </div>
 
           {/* table form */}
